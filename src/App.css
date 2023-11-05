@@ -1,38 +1,166 @@
-.App {
-  text-align: center;
+/* 세팅 */
+p,
+h1,
+h2,
+h3,
+input,
+button{
+  margin: 0px;
+  padding: 0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* 아웃라인 */
+.outline {
+  display: flex;
+  justify-content: center;
+  
+  width: 100%;
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* app 공간 */
+.app_box {
   display: flex;
   flex-direction: column;
+
+  position: relative;
+
+  width: 1200px;
+  height: 800px;
+  margin-top: 10px; 
+}
+
+/* header */
+header {
+  width: 100%;
+  height: 130px;
+}
+
+header h1 {
+  font-size: 24px;
+}
+
+.header_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  margin: 10px 15px;
+}
+
+.header_box {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+
+  width: 100%;
+  height: 100px;
+  margin-top: 20px;
+
+  background-color: rgb(238, 238, 238);
+  border-radius: 10px;
+}
+
+.header_input_box_outline {
+  display: flex;
+  flex-direction: row;
+
+  margin: 0 20px;
+}
+
+.header_input_box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.header_input_box.content {
+  margin-left: 30px;
+}
+
+.header_input_box input {
+  width: 250px;
+  height: 35px;
+
+  border: none;
+  border-radius: 8px;
+}
+
+.add_btn {
+  width: 130px;
+  height: 35px;
+  margin-right: 20px;
+  padding: 5px;
+
+  color: aliceblue;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(36, 126, 127);
+}
+
+/* main */
+main {
+  width: 100%;
+  height: 100%;
+  margin-top: 40px;
+}
+
+.working, .done {
+  margin: 30px 15px;
+}
+
+.done {
+  margin-top: 40px;
+}
+
+.working_card_box, .done_card_box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  margin-top: 20px;
+}
+
+.card {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
+  gap: 20px;
+
+  width: 270px;
+  height: 150px;
+  padding: 10px 20px;
+
+  border-radius: 10px;
+  border: 5px solid rgb(21, 117, 118);
 }
 
-.App-link {
-  color: #61dafb;
+.card_btn_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card_btn_box button {
+  width: 130px;
+  height: 40px;
+
+  background: transparent;
+  border-radius: 10px;
 }
+
+.delete_btn {
+  border: 3px solid rgb(246, 83, 63);
+}
+
+.complete_btn, .cancel_btn {
+  border: 3px solid rgb(16, 106, 0);  
+}
+
+
+
+
