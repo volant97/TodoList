@@ -72,8 +72,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 ## 💾 Component
-
+  
 | 1 | 2 | 3 |
 |  :---:  |  :---:  |  :---:  |  :---:  |
 | App | Header |  |
 |  | MainLogic | Todo |
+  
