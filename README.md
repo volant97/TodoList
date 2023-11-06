@@ -75,5 +75,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 | 1 | 2 | 3 |
 | :---: | :---: | :---: | :---: |
-| App | Header | |
-| | MainLogic | Todo |
+| App | Header | . |
+| . | MainLogic | Todo |
