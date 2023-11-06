@@ -73,6 +73,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ## 💾 Component
 
+|마크다운|테이블|
+
+|---|---|
+
+|셀|셀2|
+
 | 1 | 2 | 3 |
 | :---: | :---: | :---: | :---: |
 | App | Header | . |
