@@ -4,6 +4,7 @@ function Todo(props) {
   const { title, content, todo, isDone, firstBtn, secondBtn, firstHandler, secondHandler } = props;
 
   if (isDone === true) {
+    // Done card
     return (
       <div className='card'>
       <h3>{title}</h3>
@@ -15,6 +16,7 @@ function Todo(props) {
     </div>
     )
   } else {
+    // Working card
   return (
     <div className='card'>
       <h3>{title}</h3>

@@ -9,7 +9,6 @@ function Header(props) {
         <h1>My Todo List</h1>
         <p>React</p>
       </div>
-
       <form className='header_box'>
         <div className='header_input_box_outline'>
           <div className='header_input_box title'>

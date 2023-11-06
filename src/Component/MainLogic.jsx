@@ -47,7 +47,6 @@ function Main(props) {
             {workingCardList}
           </div>
         </div>
-
         <div className='done'>
           <h2>Done..! 🎉</h2>
           <div className='done_card_box'>

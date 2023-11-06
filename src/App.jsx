@@ -2,7 +2,7 @@ import './App.css';
 import React from "react";
 import { useState } from "react";
 import Header from './Component/Header';
-import Main from './Component/Main';
+import Main from './Component/MainLogic';
 
 function App() {
   const [title, setTitle] = useState("");
@@ -10,6 +10,7 @@ function App() {
   const [todo, setTodo] = useState([]);
   const [doneTodo, setDoneTodo] = useState([]);
 
+  // 추가하기 버튼 클릭
   const submitClickHandler = (e) => {
     e.preventDefault();
 
@@ -30,20 +31,22 @@ function App() {
     setContent("");
   };
 
+  // title input 값
   const titleChangeHandler = e => {
     setTitle(e.target.value)
   };
 
+  // content input 값
   const contentChangeHandler = e => {
     setContent(e.target.value)
   };
 
-  // working 삭제 기능
+  // working 삭제
   const workingDeleteHandler = (id => {
     setTodo(todo.filter(item => item.id !== id));
   });
 
-  // working 완료 기능
+  // working 완료
   const workingDoneHandler = (did => {
     const newDoneTodo = {
       id: did.id,
@@ -55,12 +58,12 @@ function App() {
     setTodo(todo.filter(item => item.id !== did.id));
   });
 
-  // Done 삭제 기능
+  // Done 삭제
   const doneDeleteHandler = (id => {
     setDoneTodo(doneTodo.filter(did => did.id !== id));
   });
 
-  // Done 취소 기능
+  // Done 취소
   const doneCancelHandler = (cid => {
     const newTodo = {
       id: cid.id,
@@ -99,11 +102,9 @@ function App() {
   return (
     <div className='outline'>
       <div className='app_box'>
-
         <header>
           {header}
         </header>
-
         <main>
           {main}
         </main>
