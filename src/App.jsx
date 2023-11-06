@@ -69,6 +69,7 @@ function App() {
       id: cid.id,
       title: cid.title,
       content: cid.content,
+      isDone: false,
     };
     setTodo([...todo, newTodo]);
     setDoneTodo(doneTodo.filter(did => cid.id !== did.id));
