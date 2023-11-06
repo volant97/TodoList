@@ -1,7 +1,8 @@
 import './App.css';
 import React from "react";
 import { useState } from "react";
-import Todo from "./Todo"
+import Header from './Component/Header';
+import Main from './Component/Main';
 
 function App() {
   const [title, setTitle] = useState("");
@@ -29,13 +30,13 @@ function App() {
     setContent("");
   };
 
-  const titleChangeHandler = (e => {
+  const titleChangeHandler = e => {
     setTitle(e.target.value)
-  });
+  };
 
-  const contentChangeHandler = (e => {
+  const contentChangeHandler = e => {
     setContent(e.target.value)
-  });
+  };
 
   // working 삭제 기능
   const workingDeleteHandler = (id => {
@@ -70,39 +71,28 @@ function App() {
     setDoneTodo(doneTodo.filter(did => cid.id !== did.id));
   })
 
-  // working 카드 리스트
-  const workingCardList = todo.map(item => {
-    return (
-      <Todo
-        key={item.id}
-        title={item.title}
-        content={item.content}
-        todo={item}
-        isDone={item.isDone}
-        firstHandler={workingDeleteHandler}
-        secondHandler={workingDoneHandler}
-        firstBtn="삭제하기"
-        secondBtn="완료"
-      />
-    )
-  })
 
-  // Done 카드 리스트
-  const doneCardList = doneTodo.map(item => {
-    return (
-      <Todo
-        key={item.id}
-        title={item.title}
-        content={item.constent}
-        todo={item}
-        isDone={item.isDone}
-        firstHandler={doneDeleteHandler}
-        secondHandler={doneCancelHandler}
-        firstBtn="삭제하기"
-        secondBtn="취소"
-      />
-    )
-  })
+
+  // header
+  const header = <Header
+    key={"header"}
+    title={title}
+    titleChangeHandler={titleChangeHandler}
+    content={content}
+    contentChangeHandler={contentChangeHandler}
+    submitClickHandler={submitClickHandler}
+  />
+
+  // main
+  const main = <Main
+    key={"main"}
+    todo={todo}
+    doneTodo={doneTodo}
+    workingDeleteHandler={workingDeleteHandler}
+    workingDoneHandler={workingDoneHandler}
+    doneDeleteHandler={doneDeleteHandler}
+    doneCancelHandler={doneCancelHandler}
+  />
 
 
 
@@ -111,52 +101,11 @@ function App() {
       <div className='app_box'>
 
         <header>
-          <div className='header_top'>
-            <h1>My Todo List</h1>
-            <p>React</p>
-          </div>
-
-          <form className='header_box'>
-            <div className='header_input_box_outline'>
-              <div className='header_input_box title'>
-                <p>제목</p>
-                <input
-                  type='text'
-                  value={title}
-                  onChange={titleChangeHandler}
-                />
-              </div>
-              <div className='header_input_box content'>
-                <p>내용</p>
-                <input
-                  type='text'
-                  value={content}
-                  onChange={contentChangeHandler}
-                />
-              </div>
-            </div>
-            <div>
-              <button className='add_btn' onClick={submitClickHandler}>추가하기</button>
-            </div>
-          </form>
+          {header}
         </header>
 
         <main>
-          <div>
-            <div className='working'>
-              <h2>Working.. 🔥</h2>
-              <div className='working_card_box'>
-                {workingCardList}
-              </div>
-            </div>
-
-            <div className='done'>
-              <h2>Done..! 🎉</h2>
-              <div className='done_card_box'>
-                {doneCardList}
-              </div>
-            </div>
-          </div>
+          {main}
         </main>
       </div>
     </div>
